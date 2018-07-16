@@ -22,10 +22,14 @@
                             {{$category->name}}
                         </td>
                         <td>
-                            <i class="glyphicon glyphicon-edit"></i>
+                            <a href="{{route('category.edit', ['id' => $category->id])}}" class="btn btn-xs btn-info">
+                                Edit
+                            </a>
                         </td>
                         <td>
-                            <i class="glyphicon glyphicon-remove"></i>
+                            <a href="{{route('category.delete', ['id' => $category->id])}}" class="btn btn-xs btn-danger">
+                                Delete
+                            </a>
                         </td>
                     </tr>
                 @endforeach
