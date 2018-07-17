@@ -28,6 +28,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         'as' => 'post.create'
     ]);
 
+    Route::post('/posts/update/{id}', [
+        'uses' => 'PostsController@update',
+        'as' => 'posts.update'
+    ]);
+
     Route::post('/post/store', [
         'uses' => 'PostsController@store',
         'as' => 'post.store'
@@ -81,6 +86,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/posts/restore/{id}', [
         'uses' => 'PostsController@restore',
         'as' => 'posts.restore'
+    ]);
+
+    Route::get('/posts/edit/{id}', [
+        'uses' => 'PostsController@edit',
+        'as' => 'posts.edit'
     ]);
 
     Route::get('/post/delete/{id}', [
