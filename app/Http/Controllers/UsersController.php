@@ -49,7 +49,8 @@ class UsersController extends Controller
         ]);
 
         Profile::create([
-            'user_id' => $user->id
+            'user_id' => $user->id,
+            'avatar' => 'uploads/avatars/1.jpg'
         ]);
 
         Session::flash('success', 'User created');
@@ -100,5 +101,27 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function admin($id)
+    {
+        $user = User::find($id);
+        $user->admin = 1;
+        $user->save();
+
+        Session::flash('success', 'User is granted with admin permission');
+
+        return redirect()->route('users');
+    }
+
+    public function not_admin($id)
+    {
+        $user = User::find($id);
+        $user->admin = 0;
+        $user->save();
+
+        Session::flash('success', 'User has no longer admin permission');
+
+        return redirect()->route('users');
     }
 }
