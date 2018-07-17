@@ -62,4 +62,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         'uses' => 'CategoriesController@destroy',
         'as' => 'category.delete'
     ]);
+
+    Route::get('/posts', [
+        'uses' => 'PostsController@index',
+        'as' => 'posts'
+    ]);
+
+    Route::get('/post/delete/{id}', [
+        'uses' => 'PostsController@destroy',
+        'as' => 'post.delete'
+    ]);
 });

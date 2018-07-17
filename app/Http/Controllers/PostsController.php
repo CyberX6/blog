@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.posts.index')->with('posts', Post::all());
     }
 
     /**
@@ -111,6 +111,11 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+
+        Session::flash('success', 'Your post was trashed');
+
+        return redirect()->route('posts');
     }
 }
