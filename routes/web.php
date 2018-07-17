@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/', [
+    'uses' => 'FrontEndController@index',
+    'as' => 'index'
+]);
+
 Route::get('/test', function () {
     return \App\User::find(5)->profile;
 });
