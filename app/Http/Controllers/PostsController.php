@@ -125,4 +125,14 @@ class PostsController extends Controller
 
         return view('admin.posts.trashed')->with('posts', $posts);
     }
+
+    public function kill($id)
+    {
+        $post = Post::withTrashed()->where('id', $id)->first();
+        $post->forceDelete();
+
+        Session::flash('success', 'Post was deleted permanently');
+
+        return redirect()->route('posts.trashed');
+    }
 }

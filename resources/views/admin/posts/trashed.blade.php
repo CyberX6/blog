@@ -28,7 +28,7 @@
                         <td>{{$post->title}}</td>
                         <td>Edit</td>
                         <td><a href="{{route('post.delete', ['id' => $post->id])}}" class="btn btn-success">Restore</a></td>
-                        <td><a href="{{route('post.delete', ['id' => $post->id])}}" class="btn btn-danger">Destroy</a></td>
+                        <td><a href="{{route('posts.kill', ['id' => $post->id])}}" class="btn btn-danger">Destroy</a></td>
                     </tr>
                 @endforeach
                 </tbody>
