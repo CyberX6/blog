@@ -105,6 +105,9 @@
                                 </li>
                             @endif
                             <li class="list-group-item">
+                                <a href="{{route('user.profile')}}">My profile</a>
+                            </li>
+                            <li class="list-group-item">
                                 <a href="{{route('posts.trashed')}}">Trashed posts</a>
                             </li>
                             <li class="list-group-item">
