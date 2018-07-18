@@ -14,6 +14,7 @@ class FrontEndController extends Controller
         return view('index')
             ->with('title', Setting::first()->site_name)
             ->with('categories', Category::all()->take(5))
-            ->with('first_post', Post::orderBy('created_at', 'desc')->first());
+            ->with('first_post', Post::orderBy('created_at', 'desc')->first())
+            ->with('other_posts', Post::orderBy('created_at', 'desc')->skip(1)->take(2)->get());
     }
 }
