@@ -20,6 +20,11 @@ Route::get('/test', function () {
     return \App\User::find(5)->profile;
 });
 
+Route::get('/{slug}', [
+    'uses' => 'FrontEndController@single',
+    'as' => 'post.single'
+]);
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {

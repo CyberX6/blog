@@ -17,4 +17,14 @@ class FrontEndController extends Controller
             ->with('first_post', Post::orderBy('created_at', 'desc')->first())
             ->with('other_posts', Post::orderBy('created_at', 'desc')->skip(1)->take(2)->get());
     }
+
+    public function single($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+
+        return view('single')
+            ->with('post', $post)
+            ->with('categories', Category::take(5)->get())
+            ->with('settings', Setting::first());
+    }
 }
