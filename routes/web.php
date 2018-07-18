@@ -20,7 +20,7 @@ Route::get('/test', function () {
     return \App\User::find(5)->profile;
 });
 
-Route::get('/{slug}', [
+Route::get('post/{slug}', [
     'uses' => 'FrontEndController@single',
     'as' => 'post.single'
 ]);
