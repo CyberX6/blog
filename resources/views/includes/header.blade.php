@@ -25,13 +25,12 @@
                     @endforeach
                 </ul>
             </nav>
-            <ul class="nav-add">
-                <li class="search search_main" style="color: black; margin-top: 5px;">
-                    <a href="#" class="js-open-search">
-                        <i class="seoicon-loupe"></i>
-                    </a>
-                </li>
-            </ul>
+            <div class="search-container">
+                <form method="get" action="/results">
+                    <input type="text" placeholder="Search.." name="query">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </header>
