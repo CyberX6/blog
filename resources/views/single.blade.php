@@ -91,11 +91,10 @@
 
                         <div class="blog-details-author-content">
                             <div class="author-info">
-                                <h5 class="author-name">Philip Demarco</h5>
+                                <h5 class="author-name">{{$post->user->name}}</h5>
                                 <p class="author-info">SEO Specialist</p>
                             </div>
-                            <p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                nonummy nibh euismod.
+                            <p class="text">{{$post->user->about}}
                             </p>
                             <div class="socials">
 
