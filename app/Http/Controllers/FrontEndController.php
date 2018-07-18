@@ -12,7 +12,7 @@ class FrontEndController extends Controller
     public function index()
     {
         return view('index')
-            ->with('title', Setting::first()->site_name)
+            ->with('settings', Setting::first())
             ->with('categories', Category::all()->take(5))
             ->with('first_post', Post::orderBy('created_at', 'desc')->first())
             ->with('other_posts', Post::orderBy('created_at', 'desc')->skip(1)->take(2)->get());

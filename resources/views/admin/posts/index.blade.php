@@ -28,7 +28,7 @@
                             <td><img src="{{$post->featured}}" style="width: 50px; height: 50px;" alt="{{$post->title}}"></td>
                             <td>{{$post->title}}</td>
                             <td>Edit</td>
-                            <td><a href="{{route('posts.restore', ['id' => $post->id])}}" class="btn btn-success">Restore</a></td>
+                            <td><a href="{{route('posts.edit', ['id' => $post->id])}}" class="btn btn-info">Edit</a></td>
                             <td><a href="{{route('posts.kill', ['id' => $post->id])}}" class="btn btn-danger">Destroy</a></td>
                         </tr>
                     @endforeach
